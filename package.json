@@ -1,0 +1,25 @@
+{
+  "name": "project-behemoth",
+  "version": "0.0.1",
+  "description": "experimental webGL based game engine and game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Somingo/project-behemoth.git"
+  },
+  "author": "Somingo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Somingo/project-behemoth/issues"
+  },
+  "homepage": "https://github.com/Somingo/project-behemoth#readme",
+  "dependencies": {
+    "@types/node": "^14.0.4",
+    "node": "^14.2.0",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.9.3"
+  }
+}
