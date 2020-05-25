@@ -16,11 +16,11 @@ export class ImageSpriteLoader {
     loadSpriteWithImage = (sprite: SerializableImageSpriteDescriptor): Promise<boolean> => new Promise<boolean>((resolve, reject) => {
         const image = document.createElement('img');
         image.onload = () => resolve(true);
-        image.onerror = () => reject;
+        image.onerror = () => reject();
         image.src = sprite.imageUrl;
         this.images.set(sprite.imageUrl, image);
         this.imageDescriptors.set(sprite.id, {...sprite, image});
-        document.body.appendChild(image);
+        // document.body.appendChild(image);
     });
 
     loadSprite = (url: string): Promise<boolean> => {
@@ -42,14 +42,19 @@ export class ImageSpriteLoader {
                     } else {
                         return this.loadSpriteWithImage(sprite);
                     }
-                })).then(() => resolve(true)).catch((x) => reject(x));
+                })).then(() => {
+                    console.log('All Image loaded.');
+                    resolve(true);
+                }).catch((x) => reject(x));
             }
             request.open('GET', url);
             request.send();
         })
     };
 
-    loadSprites = (urlList: string[]): Promise<boolean> => Promise.all(urlList.map(this.loadSprite)).then(() => true);
+    loadSprites = (urlList: string[]): Promise<any> => {
+        return Promise.all(urlList.map(this.loadSprite));
+    };
 }
 
 export interface ImageSpriteDescriptor extends SerializableImageSpriteDescriptor {
@@ -71,6 +76,7 @@ export class ImageSprite implements Sprite, Point {
     }
 
     render = (event: RenderEvent): void => {
+        event.context.drawImage(this.descriptor.image, this.descriptor.x, this.descriptor.y, this.descriptor.w, this.descriptor.h, this.x - this.descriptor.anchorX, this.y - this.descriptor.anchorY, this.descriptor.w, this.descriptor.h)
     };
 
     update = (event: UpdateEvent): void => {

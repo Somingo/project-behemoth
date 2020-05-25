@@ -12,7 +12,7 @@ export class Layer extends Container implements Rectangle {
     }
 
     render = (event: RenderEvent) => {
-        super.render(event);
+        this.renderSprites(event);
     };
 
 

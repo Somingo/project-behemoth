@@ -3,6 +3,7 @@ import {RenderEvent} from "./RenderEvent";
 import {UpdateEvent} from "./UpdateEvent";
 import {Layer} from "./Layer";
 import {ImageSpriteLoader} from "./ImageSprite";
+import {Game} from "./Game";
 
 export abstract class Scene implements Sprite {
 
@@ -12,9 +13,17 @@ export abstract class Scene implements Sprite {
 
     abstract spriteList(): string[];
 
-    load = (): Promise<boolean> => this.spriteLoader.loadSprites(this.spriteList());
+    abstract init(): void;
+
+    load = (): Promise<any> => {
+        return this.spriteLoader.loadSprites(this.spriteList()).then(x => {
+            this.init();
+            return x
+        });
+    };
 
     render = (event: RenderEvent): void => {
+        event.context.fillRect(0, 0, Game.getInstance().width, Game.getInstance().height);
         this.layers.forEach(layer => layer.render(event));
     };
 
