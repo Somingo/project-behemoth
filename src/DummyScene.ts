@@ -1,7 +1,7 @@
-import {Scene} from "./Scene";
-import {Layer} from "./Layer";
-import {Game} from "./Game";
-import {ImageSprite} from "./ImageSprite";
+import {Scene} from './Scene';
+import {Layer} from './Layer';
+import {Game} from './Game';
+import {ImageSprite, SerializableImageSpriteDescriptor} from './ImageSprite';
 
 const RANDOM_ESNW = ['E', 'S', 'N', 'W'];
 
@@ -10,11 +10,11 @@ function randomENSW(): string {
 }
 
 export class DummyScene extends Scene {
-    spriteList = (): string[] => ['dirt.json'];
-
     constructor() {
         super();
     }
+
+    spriteList = (): string[] => ['assets/dirt.json'];
 
     init = (): void => {
         const dummyLayer = new Layer(0, 0, Game.getInstance().width, Game.getInstance().height);

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "dirt_W",
+    "x": 0,
+    "y": 0,
+    "w": 256,
+    "h": 512,
+    "anchorX": 128,
+    "anchorY": 512,
+    "imageUrl": "assets/desert/dirt_W.png"
+  },
+  {
+    "id": "dirt_E",
+    "x": 0,
+    "y": 0,
+    "w": 256,
+    "h": 512,
+    "anchorX": 128,
+    "anchorY": 512,
+    "imageUrl": "assets/desert/dirt_E.png"
+  },
+  {
+    "id": "dirt_S",
+    "x": 0,
+    "y": 0,
+    "w": 256,
+    "h": 512,
+    "anchorX": 128,
+    "anchorY": 512,
+    "imageUrl": "assets/desert/dirt_S.png"
+  },
+  {
+    "id": "dirt_N",
+    "x": 0,
+    "y": 0,
+    "w": 256,
+    "h": 512,
+    "anchorX": 128,
+    "anchorY": 512,
+    "imageUrl": "assets/desert/dirt_N.png"
+  }
+]

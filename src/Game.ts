@@ -12,9 +12,6 @@ export class Game {
         this.canvas = document.createElement('canvas');
         this.canvas.id = id;
         this.context = this.canvas.getContext("2d");
-        window.document.body.style.width = '100vw';
-        window.document.body.style.height = '100vh';
-        window.document.body.style.margin = '0';
         this.onResize();
         window.document.body.appendChild(this.canvas);
         window.addEventListener('resize', () => this.onResize());
@@ -54,8 +51,8 @@ export class Game {
     };
 
     onResize = (): void => {
-        this.canvas.width = window.document.body.clientWidth;
-        this.canvas.height = window.document.body.clientHeight;
+        this.canvas.width = window.document.body.clientWidth-1;
+        this.canvas.height = window.document.body.clientHeight-1;
     };
 
     public static getInstance(): Game {
