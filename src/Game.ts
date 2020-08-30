@@ -1,4 +1,5 @@
-import {Scene} from "./Scene";
+import {Scene} from './Scene';
+import {MouseStateProvider} from './mouse/MouseStateProvider';
 
 export class Game {
     private static instance: Game;
@@ -7,9 +8,11 @@ export class Game {
     scene: Scene;
     private isLoading = true;
     private readonly context: CanvasRenderingContext2D | null;
+    private mouseStateProvider:MouseStateProvider;
 
     constructor(id: string, SceneConstructor: new () => Scene) {
         this.canvas = document.createElement('canvas');
+        this.mouseStateProvider = new MouseStateProvider(this.canvas);
         this.canvas.id = id;
         this.context = this.canvas.getContext("2d");
         this.onResize();
@@ -34,8 +37,9 @@ export class Game {
             this.context.fillText('Loading...', 50, 50);
         }
         if (!this.isLoading) {
-            this.scene.update({});
+            this.scene.update({mouseState:this.mouseStateProvider.state});
         }
+        this.mouseStateProvider.update();
         if (!this.isLoading) {
             this.scene.render({context: this.context});
         }

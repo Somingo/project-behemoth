@@ -2,6 +2,7 @@ import {Scene} from './Scene';
 import {Layer} from './Layer';
 import {Game} from './Game';
 import {ImageSprite} from './ImageSprite';
+import {MouseStateMonitor} from './mouse/MouseStateMonitor';
 
 const RANDOM_ESNW = ['E', 'S', 'N', 'W'];
 
@@ -23,6 +24,9 @@ export class DummyScene extends Scene {
                 dummyLayer.sprites.push(new ImageSprite('dirt_' + randomENSW(), 256 * j + 128 * (i % 2), 64 * i));
             }
         }
+        const hud = new Layer(0, 0, Game.getInstance().width, Game.getInstance().height);
+        hud.sprites.push(new MouseStateMonitor());
         this.layers.push(dummyLayer);
+        this.layers.push(hud);
     };
 }
