@@ -1,5 +1,15 @@
 [
   {
+    "id": "empty",
+    "x": 0,
+    "y": 0,
+    "w": 256,
+    "h": 512,
+    "anchorX": 128,
+    "anchorY": 512,
+    "imageUrl": "assets/desert/empty.png"
+  },
+  {
     "id": "dirt_W",
     "x": 0,
     "y": 0,

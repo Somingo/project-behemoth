@@ -2,7 +2,6 @@ import {ImageSprite} from './ImageSprite';
 import {Sprite} from './Sprite';
 import {RenderEvent} from './RenderEvent';
 import {UpdateEvent} from './UpdateEvent';
-import {MouseStateProvider} from './mouse/MouseStateProvider';
 
 export class IsometricTile implements Sprite {
     image: ImageSprite;
