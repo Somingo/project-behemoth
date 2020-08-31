@@ -15,7 +15,6 @@ export class Game {
         this.mouseStateProvider = new MouseStateProvider(this.canvas);
         this.canvas.id = id;
         this.context = this.canvas.getContext("2d");
-        this.onResize();
         window.document.body.appendChild(this.canvas);
         window.addEventListener('resize', () => this.onResize());
         Game.instance = this;
@@ -25,6 +24,7 @@ export class Game {
     }
 
     gameCycle: FrameRequestCallback = (time) => {
+        this.onResize();
         if (this.context == null) {
             alert('Unexpected Error: please reload...');
             return;
