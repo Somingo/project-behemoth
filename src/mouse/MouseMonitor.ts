@@ -2,7 +2,7 @@ import {Sprite} from '../Sprite';
 import {RenderEvent} from '../RenderEvent';
 import {UpdateEvent} from '../UpdateEvent';
 
-export class MouseStateMonitor implements Sprite {
+export class MouseMonitor implements Sprite {
 
     stateText: string = '';
 

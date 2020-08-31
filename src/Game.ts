@@ -1,5 +1,6 @@
 import {Scene} from './Scene';
-import {MouseStateProvider} from './mouse/MouseStateProvider';
+import {MouseHandler} from './mouse/MouseHandler';
+import {KeyboardHandler} from './keyboard/KeyboardHandler';
 
 export class Game {
     private static instance: Game;
@@ -8,11 +9,12 @@ export class Game {
     scene: Scene;
     private isLoading = true;
     private readonly context: CanvasRenderingContext2D | null;
-    private mouseStateProvider:MouseStateProvider;
+    private mouseHandler:MouseHandler;
+    private keyboardHandler:KeyboardHandler = new KeyboardHandler();
 
     constructor(id: string, SceneConstructor: new () => Scene) {
         this.canvas = document.createElement('canvas');
-        this.mouseStateProvider = new MouseStateProvider(this.canvas);
+        this.mouseHandler = new MouseHandler(this.canvas);
         this.canvas.id = id;
         this.context = this.canvas.getContext("2d");
         window.document.body.appendChild(this.canvas);
@@ -37,9 +39,10 @@ export class Game {
             this.context.fillText('Loading...', 50, 50);
         }
         if (!this.isLoading) {
-            this.scene.update({mouseState:this.mouseStateProvider.state});
+            this.scene.update({mouseState:this.mouseHandler.state, keyState: this.keyboardHandler.state});
         }
-        this.mouseStateProvider.update();
+        this.mouseHandler.update();
+        this.keyboardHandler.update();
         if (!this.isLoading) {
             this.scene.render({context: this.context});
         }

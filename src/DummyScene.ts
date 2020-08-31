@@ -2,7 +2,7 @@ import {Scene} from './Scene';
 import {Layer} from './Layer';
 import {Game} from './Game';
 import {ImageSprite} from './ImageSprite';
-import {MouseStateMonitor} from './mouse/MouseStateMonitor';
+import {MouseMonitor} from './mouse/MouseMonitor';
 import {IsometricTile} from './IsometricTile';
 import {IsometricLayer} from './IsometricLayer';
 
@@ -22,7 +22,7 @@ export class DummyScene extends Scene {
     init = (): void => {
         const groundLayer = new IsometricLayer(40, 20);
         const hud = new Layer(0, 0, Game.getInstance().width, Game.getInstance().height);
-        hud.sprites.push(new MouseStateMonitor());
+        hud.sprites.push(new MouseMonitor());
         this.layers.push(groundLayer);
         this.layers.push(hud);
     };

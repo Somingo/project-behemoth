@@ -1,6 +1,6 @@
 import {MouseState} from './MouseState';
 
-export class MouseStateProvider {
+export class MouseHandler {
 
     static buttons = {
         LEFT: 0,
@@ -44,7 +44,7 @@ export class MouseStateProvider {
         this.mouseCoordinateHandler(event);
         this.state.mouseButtonDown = this.state.mouseButtonDown.map(
             (button, index) => {
-                let newButtonState = (MouseStateProvider.buttonBinary[index] & event.buttons) === MouseStateProvider.buttonBinary[index];
+                let newButtonState = (MouseHandler.buttonBinary[index] & event.buttons) === MouseHandler.buttonBinary[index];
                 this.state.hasMouseButtonUpdated[index] = button !== newButtonState;
                 return newButtonState;
             },
