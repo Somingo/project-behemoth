@@ -3,6 +3,7 @@ import {Layer} from './Layer';
 import {Game} from './Game';
 import {ImageSprite} from './ImageSprite';
 import {MouseStateMonitor} from './mouse/MouseStateMonitor';
+import {IsometricTile} from './IsometricTile';
 
 const RANDOM_ESNW = ['E', 'S', 'N', 'W'];
 
@@ -18,10 +19,10 @@ export class DummyScene extends Scene {
     spriteList = (): string[] => ['assets/dirt.json'];
 
     init = (): void => {
-        const dummyLayer = new Layer(0, 0, Game.getInstance().width, Game.getInstance().height, .20);
+        const dummyLayer = new Layer(0, 0, Game.getInstance().width, Game.getInstance().height, 0.2);
         for (let i = 0; i < 40; i++) {
             for (let j = 0; j < 20; j++) {
-                dummyLayer.sprites.push(new ImageSprite('dirt_' + randomENSW(), 256 * j + 128 * (i % 2), 64 * i));
+                dummyLayer.sprites.push(new IsometricTile('dirt_' + randomENSW(), j, i));
             }
         }
         const hud = new Layer(0, 0, Game.getInstance().width, Game.getInstance().height);

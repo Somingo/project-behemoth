@@ -1,8 +1,8 @@
-import {Sprite} from "./Sprite";
-import {RenderEvent} from "./RenderEvent";
-import {UpdateEvent} from "./UpdateEvent";
-import {Point, Rectangle} from "./Rectangle";
-import {Game} from "./Game";
+import {Sprite} from './Sprite';
+import {RenderEvent} from './RenderEvent';
+import {UpdateEvent} from './UpdateEvent';
+import {Point, Rectangle} from './Rectangle';
+import {Game} from './Game';
 
 export class ImageSpriteLoader {
     private images: Map<string, HTMLImageElement> = new Map<string, HTMLImageElement>();
@@ -75,8 +75,24 @@ export class ImageSprite implements Sprite, Point {
         this.descriptor = Game.getInstance().scene.spriteLoader.getDescriptor(id);
     }
 
+    get dw(): number {
+        return this.descriptor.w;
+    }
+
+    get dh(): number {
+        return this.descriptor.h;
+    }
+
+    get dy(): number {
+        return this.y - this.descriptor.anchorY;
+    }
+
+    get dx(): number {
+        return this.x - this.descriptor.anchorX;
+    }
+
     render = (event: RenderEvent): void => {
-        event.context.drawImage(this.descriptor.image, this.descriptor.x, this.descriptor.y, this.descriptor.w, this.descriptor.h, this.x - this.descriptor.anchorX, this.y - this.descriptor.anchorY, this.descriptor.w, this.descriptor.h)
+        event.context.drawImage(this.descriptor.image, this.descriptor.x, this.descriptor.y, this.descriptor.w, this.descriptor.h, this.dx, this.dy, this.dw, this.dh);
     };
 
     update = (event: UpdateEvent): void => {
