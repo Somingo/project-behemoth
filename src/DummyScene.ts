@@ -5,6 +5,8 @@ import {ImageSprite} from './ImageSprite';
 import {MouseMonitor} from './mouse/MouseMonitor';
 import {IsometricTile} from './IsometricTile';
 import {IsometricLayer} from './IsometricLayer';
+import {UpdateEvent} from './UpdateEvent';
+import {Keys} from './keyboard/Keys';
 
 const RANDOM_ESNW = ['E', 'S', 'N', 'W'];
 
@@ -17,13 +19,32 @@ export class DummyScene extends Scene {
         super();
     }
 
+    gameLayers:Layer[] = [];
+
     spriteList = (): string[] => ['assets/dirt.json'];
 
     init = (): void => {
         const groundLayer = new IsometricLayer(40, 20);
+        this.gameLayers.push(groundLayer);
         const hud = new Layer(0, 0, Game.getInstance().width, Game.getInstance().height);
         hud.sprites.push(new MouseMonitor());
         this.layers.push(groundLayer);
         this.layers.push(hud);
     };
+
+    update(event:UpdateEvent):void {
+        super.update(event);
+        if (event.keyState.keyDown[Keys.leftArrow]) {
+            this.gameLayers.forEach(layer=> layer.x-=20);
+        }
+        if (event.keyState.keyDown[Keys.rightArrow]) {
+            this.gameLayers.forEach(layer=> layer.x+=20);
+        }
+        if (event.keyState.keyDown[Keys.upArrow]) {
+            this.gameLayers.forEach(layer=> layer.y-=20);
+        }
+        if (event.keyState.keyDown[Keys.downArrow]) {
+            this.gameLayers.forEach(layer=> layer.y+=20);
+        }
+    }
 }

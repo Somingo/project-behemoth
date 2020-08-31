@@ -27,7 +27,7 @@ export abstract class Scene implements Sprite {
         this.layers.forEach(layer => layer.render(event));
     };
 
-    update = (event: UpdateEvent): void => {
+    update(event: UpdateEvent): void {
         this.layers.forEach(layer => layer.update(event));
     };
 
