@@ -19,9 +19,9 @@ export class DummyScene extends Scene {
         super();
     }
 
-    spriteList = (): string[] => ['assets/dirt.json'];
+    spriteList = (): string[] => ['assets/desert_ground.json', 'assets/desert_objects.json'];
 
-    init = (): void => {
+    init(): void {
         const groundLayer = new IsometricLayer(40, 20);
         this.gameLayers.push(groundLayer);
         const hud = new Layer(0, 0, Game.getInstance().width, Game.getInstance().height);

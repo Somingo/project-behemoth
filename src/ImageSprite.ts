@@ -6,7 +6,7 @@ import {Game} from './Game';
 
 export class ImageSpriteLoader {
     private images: Map<string, HTMLImageElement> = new Map<string, HTMLImageElement>();
-    private imageDescriptors: Map<string, ImageSpriteDescriptor> = new Map<string, ImageSpriteDescriptor>();
+    public readonly imageDescriptors: Map<string, ImageSpriteDescriptor> = new Map<string, ImageSpriteDescriptor>();
 
     constructor() {
     }
