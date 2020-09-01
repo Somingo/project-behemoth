@@ -1,9 +1,9 @@
-import {Sprite} from "./Sprite";
-import {RenderEvent} from "./RenderEvent";
-import {UpdateEvent} from "./UpdateEvent";
-import {Layer} from "./Layer";
-import {ImageSpriteLoader} from "./ImageSprite";
-import {Game} from "./Game";
+import {Sprite} from './Sprite';
+import {RenderEvent} from './RenderEvent';
+import {UpdateEvent} from './UpdateEvent';
+import {Layer} from './Layer';
+import {ImageSpriteLoader} from './ImageSprite';
+import {Game} from './Game';
 
 export abstract class Scene implements Sprite {
 

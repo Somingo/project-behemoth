@@ -27,7 +27,7 @@ export class KeyboardHandler {
         this.state.keyDown[event.keyCode] = false;
         this.keyEventHandler(event);
     }
-    update = ():void => {
+    update = (): void => {
         this.state.keyChanged = {};
     }
 }

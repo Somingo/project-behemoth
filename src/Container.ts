@@ -1,6 +1,6 @@
-import {Sprite} from "./Sprite";
-import {RenderEvent} from "./RenderEvent";
-import {UpdateEvent} from "./UpdateEvent";
+import {Sprite} from './Sprite';
+import {RenderEvent} from './RenderEvent';
+import {UpdateEvent} from './UpdateEvent';
 
 export class Container implements Sprite {
     sprites: Sprite[] = [];

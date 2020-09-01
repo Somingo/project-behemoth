@@ -1,9 +1,7 @@
 import {Scene} from './Scene';
 import {Layer} from './Layer';
 import {Game} from './Game';
-import {ImageSprite} from './ImageSprite';
 import {MouseMonitor} from './mouse/MouseMonitor';
-import {IsometricTile} from './IsometricTile';
 import {IsometricLayer} from './IsometricLayer';
 import {UpdateEvent} from './UpdateEvent';
 import {Keys} from './keyboard/Keys';
@@ -15,11 +13,11 @@ export function randomENSW(): string {
 }
 
 export class DummyScene extends Scene {
+    gameLayers: Layer[] = [];
+
     constructor() {
         super();
     }
-
-    gameLayers:Layer[] = [];
 
     spriteList = (): string[] => ['assets/dirt.json'];
 
@@ -32,19 +30,19 @@ export class DummyScene extends Scene {
         this.layers.push(hud);
     };
 
-    update(event:UpdateEvent):void {
+    update(event: UpdateEvent): void {
         super.update(event);
         if (event.keyState.keyDown[Keys.leftArrow]) {
-            this.gameLayers.forEach(layer=> layer.x-=20);
+            this.gameLayers.forEach(layer => layer.x -= 20);
         }
         if (event.keyState.keyDown[Keys.rightArrow]) {
-            this.gameLayers.forEach(layer=> layer.x+=20);
+            this.gameLayers.forEach(layer => layer.x += 20);
         }
         if (event.keyState.keyDown[Keys.upArrow]) {
-            this.gameLayers.forEach(layer=> layer.y-=20);
+            this.gameLayers.forEach(layer => layer.y -= 20);
         }
         if (event.keyState.keyDown[Keys.downArrow]) {
-            this.gameLayers.forEach(layer=> layer.y+=20);
+            this.gameLayers.forEach(layer => layer.y += 20);
         }
     }
 }

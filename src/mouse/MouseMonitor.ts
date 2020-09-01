@@ -9,7 +9,7 @@ export class MouseMonitor implements Sprite {
     render(event: RenderEvent): void {
         event.context.fillStyle = '#000000';
         event.context.font = '12px';
-        event.context.fillText(this.stateText, 20,20);
+        event.context.fillText(this.stateText, 20, 20);
     }
 
     update(event: UpdateEvent): void {

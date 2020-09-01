@@ -3,6 +3,6 @@ export interface MouseState {
     nativeYCoordinate: number;
     mouseButtonDown: boolean[];
     hasMouseButtonUpdated: boolean [];
-    x:number;
-    y:number;
+    x: number;
+    y: number;
 }
