@@ -1,6 +1,7 @@
 import {Layer} from './Layer';
 import {IsometricTile} from './IsometricTile';
 import {randomENSW} from './DummyScene';
+import {RenderEvent} from './RenderEvent';
 
 export class IsometricLayer extends Layer {
 
@@ -12,4 +13,5 @@ export class IsometricLayer extends Layer {
             }
         }
     }
+
 }

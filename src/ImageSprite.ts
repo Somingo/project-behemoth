@@ -20,7 +20,6 @@ export class ImageSpriteLoader {
         image.src = sprite.imageUrl;
         this.images.set(sprite.imageUrl, image);
         this.imageDescriptors.set(sprite.id, {...sprite, image});
-        // document.body.appendChild(image);
     });
 
     loadSprite = (url: string): Promise<boolean> => {
@@ -91,11 +90,11 @@ export class ImageSprite implements Sprite, Point {
         return this.x - this.descriptor.anchorX;
     }
 
-    render = (event: RenderEvent): void => {
+    render(event: RenderEvent): void {
         event.context.drawImage(this.descriptor.image, this.descriptor.x, this.descriptor.y, this.descriptor.w, this.descriptor.h, this.dx, this.dy, this.dw, this.dh);
-    };
+    }
 
-    update = (event: UpdateEvent): void => {
-    };
+    update(event: UpdateEvent): void {
+    }
 
 }
