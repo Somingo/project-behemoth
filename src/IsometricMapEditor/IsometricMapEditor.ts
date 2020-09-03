@@ -18,13 +18,13 @@ export function randomENSW(): string {
 
 export class IsometricMapEditor extends Scene {
     gameLayers: Layer[] = [];
-    tileList:TileList | null = null;
+    tileList: TileList | null = null;
 
     constructor() {
         super();
     }
 
-    spriteList = (): string[] => ['assets/desert_ground.json', 'assets/desert_objects.json'];
+    spriteList = (): string[] => ['assets/desert_ground.json', 'assets/desert_objects.json', 'assets/ui.json'];
 
     init(): void {
         const groundLayer = new IsometricLayer(40, 20);
@@ -40,7 +40,7 @@ export class IsometricMapEditor extends Scene {
     update(event: UpdateEvent): void {
         super.update(event);
         if (event.mouseState.mouseButtonDown[MouseHandler.buttons.LEFT]) {
-            const target = this.gameLayers[0].sprites.find(x=> (x instanceof IsometricTile)?x.hover:false );
+            const target = this.gameLayers[0].sprites.find(x => (x instanceof IsometricTile) ? x.hover : false);
             if (target instanceof IsometricTile) {
                 target.image = new ImageSprite(this.tileList?.selection?.selectedTileId || 'empty', target.cX, target.cY);
             }

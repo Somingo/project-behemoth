@@ -50,9 +50,9 @@ export class TileList extends Layer {
         }
         if (hover && !event.mouseState.mouseButtonDown[MouseHandler.buttons.LEFT] &&
             event.mouseState.hasMouseButtonUpdated[MouseHandler.buttons.LEFT]) {
-             this.selection.selectedId = Math.floor(event.mouseState.x / (256))-1;
-             this.selection.selectedTileId = (this.sprites[this.selection.selectedId] as IsometricTile).image.descriptor.id;
-             console.log((this.selection.selectedId));
+            this.selection.selectedId = Math.floor(event.mouseState.x / (256)) - 1;
+            this.selection.selectedTileId = (this.sprites[this.selection.selectedId] as IsometricTile).image.descriptor.id;
+            console.log((this.selection.selectedId));
         }
     }
 
