@@ -1,5 +1,5 @@
 import {Game} from './Game';
-import {DummyScene} from './DummyScene';
+import {IsometricMapEditor} from './IsometricMapEditor/IsometricMapEditor';
 import './index.css';
 
-new Game('gameCanvas', DummyScene);
+new Game('gameCanvas', IsometricMapEditor);

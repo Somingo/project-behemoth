@@ -15,7 +15,6 @@ export class Layer extends Container implements Rectangle {
     update(event: UpdateEvent): void {
         event.mouseState.x = (-this.x * this.scale + event.mouseState.nativeXCoordinate) / this.scale;
         event.mouseState.y = (-this.y * this.scale + event.mouseState.nativeYCoordinate) / this.scale;
-        console.log(event.mouseState.x);
         this.updateSprites(event);
     }
 

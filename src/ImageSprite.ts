@@ -65,10 +65,11 @@ export interface SerializableImageSpriteDescriptor extends Rectangle {
     imageUrl: string;
     anchorX: number;
     anchorY: number;
+    c?: number;
 }
 
 export class ImageSprite implements Sprite, Point {
-    private descriptor: ImageSpriteDescriptor;
+     descriptor: ImageSpriteDescriptor;
 
     constructor(private id: string, public x: number = 0, public y: number = 0) {
         this.descriptor = Game.getInstance().scene.spriteLoader.getDescriptor(id);

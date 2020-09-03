@@ -15,7 +15,7 @@ export class IsometricTile implements Sprite {
     constructor(id: string, public x: number, public y: number) {
         this.cX = this.width * x + this.width / 2 * (y % 2);
         this.cY = this.height / 2 * y;
-        this.image = new ImageSprite(id, this.cX, this.height / 2 * y);
+        this.image = new ImageSprite(id, this.cX, this.cY);
     }
 
     render(event: RenderEvent): void {

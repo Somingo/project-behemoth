@@ -1,6 +1,6 @@
 import {Layer} from './Layer';
 import {IsometricTile} from './IsometricTile';
-import {randomENSW} from './DummyScene';
+import {randomENSW} from './IsometricMapEditor/IsometricMapEditor';
 
 export class IsometricLayer extends Layer {
 
