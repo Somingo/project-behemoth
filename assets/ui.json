@@ -1,0 +1,14 @@
+[
+    {"id": "btn_Close", "c": 2, "x": 0, "y": 0, "w": 210, "h": 210, "anchorX": 0, "anchorY": 0, "imageUrl": "assets/ui/Close_BTN.png"},
+    {"id": "btn_Close_hover", "c": 2, "x": 0, "y": 0, "w": 210, "h": 210, "anchorX": 0, "anchorY": 0, "imageUrl": "assets/ui/Close_BTN_hover.png"},
+    {"id": "btn_Menu", "c": 2, "x": 0, "y": 0, "w": 210, "h": 210, "anchorX": 0, "anchorY": 0, "imageUrl": "assets/ui/Menu_BTN.png"},
+    {"id": "btn_Menu_hover", "c": 2, "x": 0, "y": 0, "w": 210, "h": 210, "anchorX": 0, "anchorY": 0, "imageUrl": "assets/ui/Menu_BTN_hover.png"},
+    {"id": "btn_Ok", "c": 2, "x": 0, "y": 0, "w": 210, "h": 210, "anchorX": 0, "anchorY": 0, "imageUrl": "assets/ui/Ok_BTN.png"},
+    {"id": "btn_Ok_hover", "c": 2, "x": 0, "y": 0, "w": 210, "h": 210, "anchorX": 0, "anchorY": 0, "imageUrl": "assets/ui/Ok_BTN_hover.png"},
+    {"id": "btn_Play", "c": 2, "x": 0, "y": 0, "w": 210, "h": 210, "anchorX": 0, "anchorY": 0, "imageUrl": "assets/ui/Play_BTN.png"},
+    {"id": "btn_Play_hover", "c": 2, "x": 0, "y": 0, "w": 210, "h": 210, "anchorX": 0, "anchorY": 0, "imageUrl": "assets/ui/Play_BTN_hover.png"},
+    {"id": "btn_Replay", "c": 2, "x": 0, "y": 0, "w": 210, "h": 210, "anchorX": 0, "anchorY": 0, "imageUrl": "assets/ui/Replay_BTN.png"},
+    {"id": "btn_Replay_hover", "c": 2, "x": 0, "y": 0, "w": 210, "h": 210, "anchorX": 0, "anchorY": 0, "imageUrl": "assets/ui/Replay_BTN_hover.png"},
+    {"id": "btn_Settings", "c": 2, "x": 0, "y": 0, "w": 210, "h": 210, "anchorX": 0, "anchorY": 0, "imageUrl": "assets/ui/Settings_BTN.png"},
+    {"id": "btn_Settings_hover", "c": 2, "x": 0, "y": 0, "w": 210, "h": 210, "anchorX": 0, "anchorY": 0, "imageUrl": "assets/ui/Settings_BTN_hover.png"}
+]
