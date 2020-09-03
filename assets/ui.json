@@ -9,6 +9,8 @@
     {"id": "btn_Play_hover", "c": 2, "x": 0, "y": 0, "w": 210, "h": 210, "anchorX": 0, "anchorY": 0, "imageUrl": "assets/ui/Play_BTN_hover.png"},
     {"id": "btn_Replay", "c": 2, "x": 0, "y": 0, "w": 210, "h": 210, "anchorX": 0, "anchorY": 0, "imageUrl": "assets/ui/Replay_BTN.png"},
     {"id": "btn_Replay_hover", "c": 2, "x": 0, "y": 0, "w": 210, "h": 210, "anchorX": 0, "anchorY": 0, "imageUrl": "assets/ui/Replay_BTN_hover.png"},
+    {"id": "btn_Icon", "c": 2, "x": 0, "y": 0, "w": 210, "h": 210, "anchorX": 0, "anchorY": 0, "imageUrl": "assets/ui/template/Empty_BTN.png"},
+    {"id": "btn_Large", "c": 2, "x": 0, "y": 0, "w": 210, "h": 210, "anchorX": 0, "anchorY": 0, "imageUrl": "assets/ui/template/Empty_BTNL_.png"},
     {"id": "btn_Settings", "c": 2, "x": 0, "y": 0, "w": 210, "h": 210, "anchorX": 0, "anchorY": 0, "imageUrl": "assets/ui/Settings_BTN.png"},
     {"id": "btn_Settings_hover", "c": 2, "x": 0, "y": 0, "w": 210, "h": 210, "anchorX": 0, "anchorY": 0, "imageUrl": "assets/ui/Settings_BTN_hover.png"}
 ]
