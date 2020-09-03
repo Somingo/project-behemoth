@@ -7,8 +7,8 @@ export class MouseMonitor implements Sprite {
     stateText: string = '';
 
     render(event: RenderEvent): void {
-        event.context.fillStyle = '#000000';
-        event.context.font = '12px';
+        event.context.fillStyle = '#ffffff';
+        event.context.font = '12px arial';
         event.context.fillText(this.stateText, 20, 20);
     }
 
