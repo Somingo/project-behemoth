@@ -10,6 +10,7 @@ export class Button implements Sprite, Rectangle {
     x: number;
     y: number;
     hover = false;
+    active = false;
 
     image: ImageSprite;
     imageHover: ImageSprite;
@@ -24,7 +25,7 @@ export class Button implements Sprite, Rectangle {
     }
 
     render(event: RenderEvent): void {
-        if (this.hover) {
+        if (this.hover || this.active) {
             this.imageHover.render(event);
         } else {
             this.image.render(event);
