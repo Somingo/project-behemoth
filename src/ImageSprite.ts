@@ -1,12 +1,12 @@
 import {Sprite} from './Sprite';
 import {RenderEvent} from './RenderEvent';
 import {UpdateEvent} from './UpdateEvent';
-import {Point, Rectangle} from './Rectangle';
+import {Dimension, Point, Rectangle} from './Rectangle';
 import {Game} from './Game';
 
 export class ImageSpriteLoader {
-    private images: Map<string, HTMLImageElement> = new Map<string, HTMLImageElement>();
     public readonly imageDescriptors: Map<string, ImageSpriteDescriptor> = new Map<string, ImageSpriteDescriptor>();
+    private images: Map<string, HTMLImageElement> = new Map<string, HTMLImageElement>();
 
     constructor() {
     }
@@ -68,19 +68,19 @@ export interface SerializableImageSpriteDescriptor extends Rectangle {
     c?: number;
 }
 
-export class ImageSprite implements Sprite, Point {
-     descriptor: ImageSpriteDescriptor;
+export class ImageSprite implements Sprite, Point, Dimension {
+    descriptor: ImageSpriteDescriptor;
 
-    constructor(private id: string, public x: number = 0, public y: number = 0) {
+    constructor(private id: string, public x: number = 0, public y: number = 0, public w: number = 0, public h: number = 0) {
         this.descriptor = Game.getInstance().scene.spriteLoader.getDescriptor(id);
     }
 
     get dw(): number {
-        return this.descriptor.w;
+        return this.w ? this.w : this.descriptor.w;
     }
 
     get dh(): number {
-        return this.descriptor.h;
+        return this.h ? this.h : this.descriptor.h;
     }
 
     get dy(): number {
