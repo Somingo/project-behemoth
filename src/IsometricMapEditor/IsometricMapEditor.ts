@@ -82,6 +82,8 @@ export class IsometricMapEditor extends Scene {
             this.gameLayers = map.map<IsometricLayer>(x=>IsometricLayer.loadLayer(x));
             this.layerSelectorButtons = [];
             map.forEach((layer, index)=> this.layerSelectorButtons.push(new ButtonText(''+(index+1), 'btn_Icon', 'btn_Icon', 1500+index*50, 90, 50, 50)));
+            this.activeLayer = 0;
+            this.layerSelectorButtons[0].active = true;
             this.createHud();
             this.applyLayers();
             console.log('loaded', this);
@@ -91,16 +93,24 @@ export class IsometricMapEditor extends Scene {
     update(event: UpdateEvent): void {
         super.update(event);
         if (event.mouseState.mouseButtonDown[MouseHandler.buttons.LEFT]) {
-            /* Load Map */
+            /** Select Layer */
+            if (event.mouseState.hasMouseButtonUpdated[MouseHandler.buttons.LEFT]) {
+                const layerIndex:number = this.layerSelectorButtons.findIndex(x=> x.hover);
+                if (layerIndex > -1) {
+                    this.layerSelectorButtons.forEach((button, index) => button.active = index === layerIndex);
+                    this.activeLayer = layerIndex;
+                }
+            }
+            /** Load Map */
             if (event.mouseState.hasMouseButtonUpdated[MouseHandler.buttons.LEFT] && this.loadMapButton?.hover) {
                 this.loadMap();
             }
-            /* Save Map */
+            /** Save Map */
             if (event.mouseState.hasMouseButtonUpdated[MouseHandler.buttons.LEFT] && this.saveMapButton?.hover) {
                 this.saveMap();
             }
-            /* Place Tile */
-            const target = this.gameLayers[0].sprites.find(x =>  x.hover);
+            /** Place Tile */
+            const target = this.gameLayers[this.activeLayer].sprites.find(x =>  x.hover);
             if (target) {
                 const newId = this.tileList?.selection?.selectedTileId || 'empty';
                 target.image = new ImageSprite(newId, target.cX, target.cY);
